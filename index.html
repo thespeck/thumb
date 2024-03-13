@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./favicon-light.png" type="image/x-icon">
+    <title>Thumbnailed</title>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="site-id">
+            <a href="./" ><h2>Thumbnailed</h2></a>
+        </div>
+        <div class="input-container">
+            <input id="url-input" name="url-input" type="url" placeholder="YouTube video URL" required pattern="">
+            <button id="input-btn" type="submit">Get Thumbnail</button>
+        </div>
+    </header>
+    <main>
+        <div id="display" class="image-display hidden">
+            <div class="image-container">
+                <div class="img-description"><span>Maximum</span></div>
+                <img id="img-0" class="thumbnail"
+                    src=""
+                    width="1280"
+                    height="720"
+                    loading="lazy"
+                    alt="Maximum Resolution">
+            </div>
+            <div class="image-container">
+                <div class="img-description"><span>Large</span></div>
+                <img id="img-1" class="thumbnail"
+                    src=""
+                    width="640"
+                    height="480"
+                    loading="lazy"
+                    alt="High Resolution">
+            </div>
+            <div class="image-container">
+                <div class="img-description"><span>Medium</span></div>
+                <img id="img-2" class="thumbnail"
+                    src=""
+                    width="480"
+                    height="360"
+                    loading="lazy"
+                    alt="Standard Quality">
+            </div>
+            <div class="image-container">
+                <div class="img-description"><span>Small</span></div>
+                <img id="img-3" class="thumbnail"
+                    src=""
+                    width="320"
+                    height="180"
+                    loading="lazy"
+                    alt="Medium Quality">
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
