@@ -11,19 +11,26 @@ let images = document.querySelectorAll('.thumbnail');
 */
 let button = document.getElementById('input-btn');
 /**
- * @type {HTMLDivElement} div
- */
-let display = document.getElementById('display');
-/**
  * @type {HTMLLinkElement} favicon
  */
 let link = document.querySelector("link[rel~='icon']");
 
 
-input.addEventListener('focus', () => {input.select()});
+input.addEventListener('focus', () => { input.select() });
 input.addEventListener('change', processThumbnail);
 input.addEventListener('input', processThumbnail);
 button.addEventListener('click', processThumbnail);
+images.forEach(image => image.addEventListener('load', e => {
+    /**
+     * @type {HTMLImageElement}
+     */
+    let thumb = e.target;
+    if (thumb.naturalWidth == 120 && thumb.naturalHeight == 90) {
+        thumb.parentElement.classList.add('hidden');
+    } else {
+        thumb.parentElement.classList.remove('hidden');
+    }
+}));
 
 processThumbnail();
 if (!link) {
@@ -57,7 +64,6 @@ function processThumbnail() {
     for (let i = 0; i < images.length; i++) {
         images[i].src = thumbURLS[i];
     }
-    display.classList.remove("hidden");
 }
 
 /**

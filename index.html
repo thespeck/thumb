@@ -12,51 +12,36 @@
 
 <body>
     <header>
-        <div class="site-id">
-            <a href="./" ><h2>Thumbnailed</h2></a>
-        </div>
-        <div class="input-container">
-            <input id="url-input" name="url-input" type="url" placeholder="YouTube video URL" required pattern="">
-            <button id="input-btn" type="submit">Get Thumbnail</button>
+        <div class="header-content">
+            <div class="site-id">
+                <a href="./">
+                    <h2>Thumbnailed</h2>
+                </a>
+            </div>
+            <div class="input-container">
+                <input id="url-input" name="url-input" type="url" placeholder="YouTube video URL" required pattern="">
+                <button id="input-btn" type="submit">Get Thumbnail</button>
+            </div>
         </div>
     </header>
     <main>
-        <div id="display" class="image-display hidden">
-            <div class="image-container">
+        <div id="display" class="image-display">
+            <div class="image-container hidden">
                 <div class="img-description"><span>Maximum</span></div>
-                <img id="img-0" class="thumbnail"
-                    src=""
-                    width="1280"
-                    height="720"
-                    loading="lazy"
+                <img id="img-0" class="thumbnail" src="" width="1280" height="720"
                     alt="Maximum Resolution">
             </div>
-            <div class="image-container">
+            <div class="image-container hidden">
                 <div class="img-description"><span>Large</span></div>
-                <img id="img-1" class="thumbnail"
-                    src=""
-                    width="640"
-                    height="480"
-                    loading="lazy"
-                    alt="High Resolution">
+                <img id="img-1" class="thumbnail" src="" width="640" height="480" alt="High Resolution">
             </div>
-            <div class="image-container">
+            <div class="image-container hidden">
                 <div class="img-description"><span>Medium</span></div>
-                <img id="img-2" class="thumbnail"
-                    src=""
-                    width="480"
-                    height="360"
-                    loading="lazy"
-                    alt="Standard Quality">
+                <img id="img-2" class="thumbnail" src="" width="480" height="360" alt="Standard Quality">
             </div>
-            <div class="image-container">
+            <div class="image-container hidden">
                 <div class="img-description"><span>Small</span></div>
-                <img id="img-3" class="thumbnail"
-                    src=""
-                    width="320"
-                    height="180"
-                    loading="lazy"
-                    alt="Medium Quality">
+                <img id="img-3" class="thumbnail" src="" width="320" height="180" alt="Medium Quality">
             </div>
         </div>
     </main>
