@@ -14,18 +14,20 @@
     <header>
         <div class="header-content">
             <div class="site-id">
-                <a href="./">
-                    <h2>Thumbnailed</h2>
-                </a>
+                <h2><a href="./">Thumbnailed</a></h2>
             </div>
-            <div class="input-container">
+            <!-- <div class="input-container">
                 <input id="url-input" name="url-input" type="url" placeholder="YouTube video URL" required pattern="">
                 <button id="input-btn" type="submit">Get Thumbnail</button>
-            </div>
+            </div> -->
         </div>
     </header>
     <main>
         <div id="display" class="image-display">
+            <div class="input-container">
+                <input id="url-input" name="url-input" type="url" placeholder="YouTube video URL" required pattern="">
+                <button id="input-btn" type="submit">Get Thumbnail</button>
+            </div>
             <div class="image-container hidden">
                 <div class="img-description"><span>Maximum</span></div>
                 <img id="img-0" class="thumbnail" src="" width="1280" height="720"

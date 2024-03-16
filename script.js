@@ -15,9 +15,7 @@ let button = document.getElementById('input-btn');
  */
 let link = document.querySelector("link[rel~='icon']");
 
-
 input.addEventListener('focus', () => { input.select() });
-input.addEventListener('change', processThumbnail);
 input.addEventListener('input', processThumbnail);
 button.addEventListener('click', processThumbnail);
 images.forEach(image => image.addEventListener('load', e => {
@@ -31,6 +29,11 @@ images.forEach(image => image.addEventListener('load', e => {
         thumb.parentElement.classList.remove('hidden');
     }
 }));
+
+let id = document.URL.split('#')[1];
+if (id?.length == 11) {
+    input.value = `https://www.youtube.com/watch?v=${id}`;
+}
 
 processThumbnail();
 if (!link) {
@@ -64,6 +67,7 @@ function processThumbnail() {
     for (let i = 0; i < images.length; i++) {
         images[i].src = thumbURLS[i];
     }
+    window.location.assign(`#${id}`)
 }
 
 /**

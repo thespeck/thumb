@@ -52,10 +52,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
+    position: sticky;
+    top: -80;
     height: 80px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.2);
 }
@@ -73,7 +71,7 @@ header {
 .site-id a {
     text-decoration: none;
     color: var(--text-color);
-    transition: outline 100ms linear, color 100ms ease-out;
+    transition: outline 150ms linear, color 150ms ease-in;
     user-select: none;
 }
 
@@ -81,18 +79,26 @@ header {
     color: var(--accent-color);
 }
 
-.site-id a:focus-visible {
+.site-id a:focus-visible, .site-id a:focus {
     outline: 2px solid var(--accent-color);
     outline-offset: 5px;
+    color: var(--accent-color);
 }
 
-main {
-    padding-top: 70px;
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
 }
+
 
 .input-container input, .input-container button {
     padding: 10px;
-    margin: 5px;
+    margin: 5px 0;
     border: 1px solid var(--text-color);
     border-radius: 5px;
     background-color: var(--background-color);
@@ -102,22 +108,24 @@ main {
 }
 
 .input-container button{
-    transition: outline 100ms linear, background-color 200ms ease-out, transition-color 200ms ease-out;
+    margin-left: 10px;
+    transition: outline 100ms linear, background-color 200ms ease-out, color 200ms ease-out;
 }
 
 .input-container input {
-    min-width: 44ch;
+    width: calc(44ch + 22px);
+}
+
+.input-container button:focus-visible {
+    border-color: var(--accent-color);
+    outline: 2px solid var(--accent-color);
+    color: var(--accent-color);
 }
 
 .input-container button:hover, .input-container button:active{
     color: var(--background-color);
     background-color: var(--accent-color);
     border: 1px solid var(--accent-color);
-}
-
-.input-container button:focus-visible {
-    border-color: var(--accent-color);
-    outline: 2px solid var(--accent-color) !important;
 }
 
 .input-container input:focus-visible {
@@ -149,14 +157,14 @@ main {
 
 .image-container {
     display: flex;
-    justify-content: center;
+    justify-content: spacce-around;
     align-items: center;
     flex-direction: column;
     margin: 15px 0;
 }
 
 .image-container img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -171,4 +179,16 @@ main {
 
 .hidden {
     display: none;
+}
+
+@media screen and (max-width: 520px){
+    .input-container {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .input-container input, .input-container button {
+        width: 100%;
+        margin: 7.5px 0;
+    }
 }
