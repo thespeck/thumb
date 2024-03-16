@@ -1,23 +1,30 @@
 /**
  * @type {HTMLInputElement}
 */
-let input = document.getElementById('url-input');
+const input = document.getElementById('url-input');
 /**
  * @type {NodeListOf<HTMLImageElement>} Nodelist of images
  */
-let images = document.querySelectorAll('.thumbnail');
+const images = document.querySelectorAll('.thumbnail');
 /**
  * @type {HTMLButtonElement} button
 */
-let button = document.getElementById('input-btn');
+const button = document.getElementById('input-btn');
 /**
  * @type {HTMLLinkElement} favicon
  */
-let link = document.querySelector("link[rel~='icon']");
+const link = document.querySelector("link[rel~='icon']");
+
+/**
+ * @type {HTMLElement}
+ */
+const header = document.querySelector("header");
+let prevScrollPos = window.scrollY;
 
 input.addEventListener('focus', () => { input.select() });
 input.addEventListener('input', processThumbnail);
 button.addEventListener('click', processThumbnail);
+window.addEventListener('scroll', handleScroll);
 images.forEach(image => image.addEventListener('load', e => {
     /**
      * @type {HTMLImageElement}
@@ -29,6 +36,8 @@ images.forEach(image => image.addEventListener('load', e => {
         thumb.parentElement.classList.remove('hidden');
     }
 }));
+
+
 
 let id = document.URL.split('#')[1];
 if (id?.length == 11) {
@@ -81,4 +90,16 @@ function parseID(url) {
         return matches[1];
     }
     return;
+}
+
+function handleScroll() {
+    const currentScrollPos = window.scrollY;
+    if (currentScrollPos > prevScrollPos && currentScrollPos > header.offsetHeight) {
+        // Scrolling down
+        header.classList.add('retracted');
+    } else {
+        // Scrolling up
+        header.classList.remove('retracted');
+    }
+    prevScrollPos = currentScrollPos;
 }

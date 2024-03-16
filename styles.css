@@ -53,9 +53,15 @@ header {
     justify-content: center;
     align-items: center;
     position: sticky;
-    top: -80;
-    height: 80px;
+    top: 0;
+    height: 70px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s ease;
+}
+
+header.retracted {
+    /* transform: translateY(-100%); */
+    top: -70px;
 }
 
 .header-content {
