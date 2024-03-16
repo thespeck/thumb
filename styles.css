@@ -73,13 +73,14 @@ header {
     color: var(--text-color);
     transition: outline 150ms linear, color 150ms ease-in;
     user-select: none;
+    border-radius: 5px;
 }
 
 .site-id a:hover {
     color: var(--accent-color);
 }
 
-.site-id a:focus-visible, .site-id a:focus {
+.site-id a:focus-visible {
     outline: 2px solid var(--accent-color);
     outline-offset: 5px;
     color: var(--accent-color);
@@ -182,6 +183,15 @@ header {
 }
 
 @media screen and (max-width: 520px){
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .site-id {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .input-container {
         width: 100%;
         flex-direction: column;
